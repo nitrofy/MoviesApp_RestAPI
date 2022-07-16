@@ -325,7 +325,7 @@ CREATE Procedure sp_AddUpdatePoster
 	BEGIN
 		IF (@Flag = 'R')--Read / Fetch
 		BEGIN
-			IF EXISTS(SELECT DISTINCT MovieId from Movies where MovieId=@MovieId)
+			IF EXISTS(SELECT DISTINCT MovieId from MoviePosters where MovieId=@MovieId)
 				BEGIN
 					
 						Select '2' AS Status,MovieId,Poster from MoviePosters 				
